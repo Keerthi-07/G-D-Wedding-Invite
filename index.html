@@ -230,6 +230,43 @@
       setInterval(()=> spawnParticle(), 900);
     })();
   </script>
+  
+  <body>
+  <!-- Your existing content: audio, videos, invite details, etc. -->
+
+  <audio id="bg-audio" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <video id="event-video" controls>
+    <source src="highlight.mp4" type="video/mp4">
+  </video>
+
+  <!-- Place the script here -->
+  <script>
+    const bgAudio = document.getElementById("bg-audio");
+    const videos = document.querySelectorAll("video");
+
+    videos.forEach(video => {
+      video.addEventListener("play", () => {
+        if (!bgAudio.paused) {
+          bgAudio.pause();
+        }
+      });
+
+      video.addEventListener("pause", () => {
+        if (bgAudio.paused) {
+          bgAudio.play();
+        }
+      });
+
+      video.addEventListener("ended", () => {
+        if (bgAudio.paused) {
+          bgAudio.play();
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
