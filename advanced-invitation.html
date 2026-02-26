@@ -181,6 +181,28 @@
   </div>
 </section>
 
+<script>
+  // Get references to your audio and video elements
+  const bgAudio = document.querySelector("audio");   // your existing <audio> tag
+  const videos = document.querySelectorAll("video"); // all <video> tags on the page
+
+  videos.forEach(video => {
+    // Pause audio when any video starts playing
+    video.addEventListener("play", () => {
+      bgAudio.pause();
+    });
+
+    // Resume audio when video is paused or ends
+    video.addEventListener("pause", () => {
+      https://bgAudio.play();
+    });
+
+    video.addEventListener("ended", () => {
+      https://bgAudio.play();
+    });
+  });
+</script>
+
 </main>
 
 
