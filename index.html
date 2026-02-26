@@ -242,32 +242,5 @@
     <source src="highlight.mp4" type="video/mp4">
   </video>
 
-  
--- Place the script here -->
-  <script>
-    const bgAudio = document.getElementById("bg-audio");
-    const videos = document.querySelectorAll("video");
-
-    videos.forEach(video => {
-      video.addEventListener("play", () => {
-        if (!bgAudio.paused) {
-          bgAudio.pause();
-        }
-      });
-
-      video.addEventListener("pause", () => {
-        if (bgAudio.paused) {
-          bgAudio.play();
-        }
-      });
-
-      video.addEventListener("ended", () => {
-        if (bgAudio.paused) {
-          bgAudio.play();
-        }
-      });
-    });
-   </script>
-    
 </body>
 </html>
